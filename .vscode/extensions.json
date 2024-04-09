@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "Vue.vscode-typescript-vue-plugin",
+    "naumovs.color-highlight",
+    "whtouche.vscode-js-console-utils",
+    "esbenp.prettier-vscode",
+    "vue.volar",
+    "hollowtree.vue-snippets",
+    "kisstkondoros.vscode-gutter-preview"
+  ]
+}
