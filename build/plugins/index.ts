@@ -1,6 +1,7 @@
 import type { PluginOption } from 'vite'
 import vue from '@vitejs/plugin-vue' // 提供 Vue 3 单文件组件支持
 import vueJsx from '@vitejs/plugin-vue-jsx' // 提供 Vue 3 JSX 支持
+import ElementPlus from 'unplugin-element-plus/vite'
 import { registerAutoImport } from './auto-import'
 import { registerAutoComponents } from './auto-components'
 import { registerHtmlPlugin } from './compile.html'
@@ -20,6 +21,9 @@ export function generateVitePlugins(viteEnv: ViteEnv, isBuild: boolean): PluginO
 
   /** 提供组件自动按需导入及类型声明功能 */
   plugins.push(registerAutoComponents())
+
+  /** Element Plus 样式自动按需导入 */
+  plugins.push(ElementPlus({ useSource: true }))
 
   /** 针对 index.html，提供压缩和基于 ejs 模板功能，亦可对其注入动态数据 */
   plugins.push(registerHtmlPlugin(viteEnv, isBuild))

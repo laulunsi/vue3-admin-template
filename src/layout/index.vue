@@ -2,6 +2,7 @@
   <div class="app-container" :class="classes">
     <p>当前设备类型： {{ appStore.device }}</p>
     <router-link to="/sadfg">访问404页面</router-link>
+    <el-button type="primary" icon="Plus" plain>新增</el-button>
     <RouterView />
   </div>
 </template>
