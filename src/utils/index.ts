@@ -68,3 +68,16 @@ export function getQueryObject(url?: string): Record<string, string> {
   }
   return query
 }
+
+/** 登录页的时间前缀 */
+export function timeFix(): string {
+  const time = new Date()
+  const hour = time.getHours()
+  return hour < 9 ? '早上好' : hour <= 11 ? '上午好' : hour <= 13 ? '中午好' : hour < 20 ? '下午好' : '晚上好'
+}
+
+/** 登录页的欢迎语 */
+export function welcome(): string {
+  const list = ['许久不见，甚是想念！', '等星星睡了再说想你', '今天营业不休息']
+  return list[Math.floor(Math.random() * list.length)]
+}
