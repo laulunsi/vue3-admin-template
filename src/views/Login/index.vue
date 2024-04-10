@@ -42,8 +42,8 @@
 defineOptions({ name: 'Login' })
 // import Cookies from 'js-cookie'
 // import { getCaptcha, login } from '@/api/login.api'
+import { setLoginParams, getLoginParams, removeLoginParams } from '@/utils/cache/local-storage'
 import { IsDevelopment } from '@/config/constants'
-// import { CacheKeyEnum } from '@/enums'
 import { timeFix, welcome } from '@/utils'
 import { ElNotification } from 'element-plus'
 import type { FormInstance, FormRules } from 'element-plus'
@@ -72,17 +72,8 @@ const loginFormRules: FormRules = {
   captcha: [{ required: true, trigger: 'blur', message: '请输入验证码' }],
 }
 
-function handleRememberMe() {
-  // if (loginForm.value.rememberMe) {
-  //   const { account, password, rememberMe } = loginForm.value
-  //   localStorage.setItem(CacheKeyEnum.LOGIN_REMEMBER_ME, JSON.stringify({ account, password, rememberMe }))
-  // } else {
-  //   localStorage.removeItem(CacheKeyEnum.LOGIN_REMEMBER_ME)
-  // }
-}
 function handleLoadRememberMe() {
-  // const jsonString = localStorage.getItem(CacheKeyEnum.LOGIN_REMEMBER_ME)
-  // jsonString && Object.assign(loginForm.value, JSON.parse(jsonString))
+  Object.assign(loginForm.value, getLoginParams())
 }
 
 /** 处理获取验证码的回调 */
@@ -98,7 +89,7 @@ async function handleLogin() {
     await loginFormRef.value?.validate()
     loading.value = true
     await userStore.login(loginForm.value as LoginParams)
-    if (loginForm.value.rememberMe) handleRememberMe()
+    if (loginForm.value.rememberMe) setLoginParams(loginForm.value as LoginParams)
     loading.value = false
     await router.replace({ path: redirect })
     ElNotification({ title: '登录成功', type: 'success', message: `${timeFix()}，${welcome()}` })

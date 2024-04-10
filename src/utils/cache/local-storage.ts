@@ -3,6 +3,20 @@ import { CacheKey } from '@/common/constants/cache-key'
 import type { TagView } from '@/store/modules/useTagsView'
 
 /* -------------------------------------------------------------------------- */
+/*                               Login Remember                               */
+/* -------------------------------------------------------------------------- */
+export function setLoginParams(loginParams: LoginParams) {
+  localStorage.setItem(CacheKey.LOGIN_REMEMBER_ME, JSON.stringify(loginParams))
+}
+export function getLoginParams(): LoginParams {
+  const json = localStorage.getItem(CacheKey.LOGIN_REMEMBER_ME)
+  return json ? JSON.parse(json) : {}
+}
+export function removeLoginParams() {
+  localStorage.removeItem(CacheKey.LOGIN_REMEMBER_ME)
+}
+
+/* -------------------------------------------------------------------------- */
 /*                                    Token                                   */
 /* -------------------------------------------------------------------------- */
 export function setToken(token: string): void {
@@ -31,9 +45,8 @@ export function getSidebarStatus(): boolean {
 /*                                  TagsView                                  */
 /* -------------------------------------------------------------------------- */
 export function setVisitedViews(views: TagView[]) {
-  // 删除不必要的属性，防止 JSON.stringify 处理到循环引用
   for (const view of views) {
-    delete view.matched
+    delete view.matched // 删除不必要的属性，防止 JSON.stringify 处理到循环引用
     delete view.redirectedFrom
   }
   localStorage.setItem(CacheKey.VISITED_VIEWS, JSON.stringify(views))
