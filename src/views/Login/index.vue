@@ -89,7 +89,8 @@ async function handleLogin() {
     await loginFormRef.value?.validate()
     loading.value = true
     await userStore.login(loginForm.value as LoginParams)
-    if (loginForm.value.rememberMe) setLoginParams(loginForm.value as LoginParams)
+    const { captcha, ...cacheParams } = loginForm.value // 避免登录验证码被缓存
+    if (loginForm.value.rememberMe) setLoginParams(cacheParams as LoginParams)
     loading.value = false
     await router.replace({ path: redirect })
     ElNotification({ title: '登录成功', type: 'success', message: `${timeFix()}，${welcome()}` })
