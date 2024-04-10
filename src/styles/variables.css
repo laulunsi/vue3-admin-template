@@ -10,7 +10,7 @@
   /* 菜单相关 */
   --app-menu-text-color: var(--el-color-white);
   --app-menu-bg-color: #2b65d9;
-  --app-menu-item-height: 42px;
+  --app-menu-item-height: var(--navbar-height);
   --app-menu-active-color: var(--app-menu-bg-color);
   --app-menu-active-bgc: var(--el-color-white);
 }

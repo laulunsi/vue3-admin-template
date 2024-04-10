@@ -1,9 +1,9 @@
-@use './variables.css';
-@use './reset.scss';
-@use 'nprogress/nprogress.css';
-@use './common.scss';
-@use './transition.scss';
-@use './side-layout.scss';
+@use './variables.css'; // 全局 CSS 变量
+@use './reset.scss'; // 重置样式表
+@use 'nprogress/nprogress.css'; // 顶部进度条样式
+@use './common.scss'; // 通用样式类
+@use './transition.scss'; // 动画类
+@use './side-layout.scss'; // 侧栏布局样式类
 @import '//at.alicdn.com/t/c/font_3806809_43zggh88y9h.css'; // iconfont 字体图标
 
 body {
@@ -17,4 +17,13 @@ body {
   width: 100%;
   height: 100%;
   padding: 16px;
+}
+
+// 侧边栏的 item 的 popper
+.el-popper {
+  border: none !important;
+  .el-menu-item {
+    height: var(--app-menu-item-height);
+    line-height: var(--app-menu-item-height);
+  }
 }

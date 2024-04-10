@@ -8,4 +8,8 @@
 defineOptions({ name: 'Dashboard' })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.app-content {
+  height: 90vh;
+}
+</style>

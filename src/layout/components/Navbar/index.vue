@@ -4,7 +4,6 @@
     <Hamburger class="menu-item hamburger" @toggleClick="appStore.toggleSidebar" />
     <!-- 面包屑导航 -->
     <Breadcrumb class="breadcrumb-container" v-if="appStore.isDesktop && settingStore.showBreadcrumb" />
-
     <div class="right-menu flex items-center h-full">
       <!-- 全屏控件 -->
       <Screenfull class="menu-item" />

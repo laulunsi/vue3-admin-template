@@ -59,17 +59,4 @@ function resolvePath(routePath: string) {
 }
 </script>
 
-<style lang="scss" scoped>
-/* 侧栏菜单每项高度 */
-:deep(.el-sub-menu__title),
-.el-menu-item {
-  height: var(--app-menu-item-height); // 统一高度 便于后期开发顶部导航模式
-  color: var(--app-menu-text-color);
-}
-
-/* 菜单项激活样式 */
-.el-menu-item.is-active {
-  color: var(--app-menu-active-color);
-  background-color: var(--app-menu-active-bgc) !important;
-}
-</style>
+<style lang="scss" scoped></style>

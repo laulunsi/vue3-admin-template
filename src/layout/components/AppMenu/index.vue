@@ -34,28 +34,41 @@ const isCollapse = computed(() => !appStore.sidebar.opened)
 // const routeList = computed(() => permissionStore.routes)
 const routeList = computed(() => router.options.routes)
 console.log('routeList: ', routeList)
+
+// 当为顶部模式时隐藏垂直滚动条
+const hiddenScrollbarVerticalBar = computed(() => {
+  return true ? 'none' : 'block'
+})
 </script>
 
 <style lang="scss" scoped>
 /** 修改滚动条样式 */
 .el-scrollbar {
-  height: 100%;
-}
-:deep(.scrollbar-wrapper) {
-  overflow-x: hidden !important;
-}
-:deep(.el-scrollbar__view) {
-  height: 100%;
+  height: 100%; // 多 1% 是为了在顶部模式时防止垂直滚动
+  :deep(.scrollbar-wrapper) {
+    overflow-x: hidden !important; // 限制水平宽度
+    .el-scrollbar__view {
+      height: 100%;
+    }
+  }
+  :deep(.el-scrollbar__bar) {
+    &.is-horizontal {
+      display: none; // 隐藏水平滚动条
+    }
+    &.is-vertical {
+      display: v-bind(hiddenScrollbarVerticalBar); // 当为顶部模式时隐藏垂直滚动条
+    }
+  }
 }
 
 .has-logo {
   .el-scrollbar {
-    height: calc(100% - var(--navbar-height));
+    height: calc(100% - var(--navbar-height)); // 多 1% 是为了在左侧模式时侧边栏最底部不显示 1px 左右的白色线条
   }
 }
 
 .el-menu {
-  width: 100%;
+  width: 100% !important;
   height: 100%;
   margin: 0 auto;
   border: none;
@@ -82,6 +95,18 @@ console.log('routeList: ', routeList)
   .el-sub-menu__title.el-tooltip__trigger {
     color: var(--app-menu-bg-color);
     background-color: var(--app-menu-text-color) !important;
+  }
+}
+
+:deep(.el-menu-item),
+:deep(.el-sub-menu__title),
+:deep(.el-sub-menu .el-menu-item),
+:deep(.el-menu--horizontal .el-menu-item) {
+  height: var(--app-menu-item-height);
+  line-height: var(--app-menu-item-height);
+  &.is-active {
+    color: var(--app-menu-active-color);
+    background-color: var(--app-menu-active-bgc) !important;
   }
 }
 </style>
