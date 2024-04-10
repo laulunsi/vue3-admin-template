@@ -9,8 +9,10 @@ export default defineStore('setting', () => {
   const showBreadcrumb = ref<boolean>(true)
   /** 是否显示标签栏 */
   const showTagsView = ref<boolean>(true)
+  /** 是否显示全屏按钮 */
+  const showScreenfull = ref<boolean>(true)
 
   const transitionName = ref('fade-transform')
 
-  return { showSetting, showLogo, fixedHeader, showBreadcrumb, showTagsView, transitionName }
+  return { showSetting, showLogo, fixedHeader, showBreadcrumb, showTagsView, showScreenfull, transitionName }
 })

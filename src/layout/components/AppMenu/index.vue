@@ -33,7 +33,6 @@ const isCollapse = computed(() => !appStore.sidebar.opened)
 /** 计算当前路由表 */
 // const routeList = computed(() => permissionStore.routes)
 const routeList = computed(() => router.options.routes)
-console.log('routeList: ', routeList)
 
 // 当为顶部模式时隐藏垂直滚动条
 const hiddenScrollbarVerticalBar = computed(() => {

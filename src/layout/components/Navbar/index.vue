@@ -6,7 +6,7 @@
     <Breadcrumb class="breadcrumb-container" v-if="appStore.isDesktop && settingStore.showBreadcrumb" />
     <div class="right-menu flex items-center h-full">
       <!-- 全屏控件 -->
-      <Screenfull class="menu-item" />
+      <Screenfull class="menu-item" v-if="settingStore.showScreenfull" />
       <!-- 个人中心 -->
       <el-dropdown class="menu-item">
         <el-image :src="userStore.avatar" fit="fill" class="avatar" />
