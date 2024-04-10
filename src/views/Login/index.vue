@@ -64,7 +64,7 @@ const loading = ref<boolean>(false)
 /** 验证码链接 */
 const captchaURL = ref<string>('')
 /** 登录表单 */
-const loginForm = ref<Partial<any>>({})
+const loginForm = ref<Partial<LoginParams>>({})
 /** 登录表单校验规则 */
 const loginFormRules: FormRules = {
   account: [{ required: true, trigger: 'blur', message: '请输入您的账号' }],
@@ -97,7 +97,7 @@ async function handleLogin() {
   try {
     await loginFormRef.value?.validate()
     loading.value = true
-    await userStore.login()
+    await userStore.login(loginForm.value as LoginParams)
     if (loginForm.value.rememberMe) handleRememberMe()
     loading.value = false
     await router.replace({ path: redirect })

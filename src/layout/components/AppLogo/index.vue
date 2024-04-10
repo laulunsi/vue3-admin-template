@@ -45,7 +45,7 @@ const title = computed(() => import.meta.env.VITE_APP_TITLE)
 
     .app-logo-text {
       white-space: nowrap;
-      margin-left: 8px;
+      margin-left: 4px;
       font-weight: 600;
       font-size: 14px;
     }
