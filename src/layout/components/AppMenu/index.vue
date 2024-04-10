@@ -1,6 +1,6 @@
 <template>
   <el-scrollbar wrap-class="scrollbar-wrapper">
-    <el-menu unique-opened :collapse="isCollapse" :collapse-transition="false" :defaultActive :textColor :backgroundColor>
+    <el-menu unique-opened :collapse="isCollapse" :collapse-transition="false" :defaultActive :textColor :backgroundColor :mode>
       <AppMenuItem v-for="(route, index) in routeList" :key="index" :item="route" :basePath="route.path" />
     </el-menu>
   </el-scrollbar>
@@ -10,6 +10,11 @@
 defineOptions({ name: 'AppMenu' })
 import { getCssVariableValue } from '@/utils'
 import AppMenuItem from './AppMenuItem.vue'
+
+const props = defineProps({
+  /** 菜单展示模式 */
+  mode: { type: String as PropType<'horizontal' | 'vertical'>, default: 'vertical' },
+})
 
 /** 读取 Pinia 仓库 */
 const appStore = useApp()
