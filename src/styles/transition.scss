@@ -3,6 +3,23 @@
 // enter-from 入场动画的初始状态
 // leave-to 入场动画的结束状态
 
+// breadcrumb transition
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+  transition: all 0.5s;
+}
+.breadcrumb-enter-from,
+.breadcrumb-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+.breadcrumb-move {
+  transition: all 0.5s;
+}
+.breadcrumb-leave-active {
+  position: absolute;
+}
+
 // fade-transform
 .fade-transform-leave-active,
 .fade-transform-enter-active {
@@ -15,4 +32,13 @@
 .fade-transform-leave-to {
   opacity: 0;
   transform: translateX(30px);
+}
+
+// sidebar-logo-fade
+.sidebar-logo-fade-enter-active {
+  transition: opacity 1.5s;
+}
+.sidebar-logo-fade-enter-from,
+.sidebar-logo-fade-leave-to {
+  opacity: 0;
 }

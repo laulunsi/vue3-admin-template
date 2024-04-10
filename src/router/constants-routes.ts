@@ -10,8 +10,55 @@ export const constantRoutes: RouteRecordRaw[] = [
     meta: { title: '登录', hidden: true },
   },
   {
+    path: '/redirect',
+    component: Layout,
+    meta: { title: '重定向', hidden: true },
+    children: [
+      {
+        path: '/redirect/:path(.*)',
+        component: () => import('@/views/Redirect/index.vue'),
+      },
+    ],
+  },
+  {
     path: '/',
     component: Layout,
+    redirect: '/dashboard',
+    children: [
+      {
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/Dashboard/index.vue'),
+        meta: { title: '首页', icon: 'Dashboard', affix: true },
+      },
+    ],
+  },
+
+  {
+    path: '/system',
+    name: 'System',
+    component: Layout,
+    meta: { title: '系统管理', icon: 'Setting', alwaysShow: true },
+    children: [
+      {
+        path: 'user-manage',
+        name: 'UserManage',
+        component: () => import('@/views/System/UserManage/index.vue'),
+        meta: { title: '用户管理', icon: 'User' },
+      },
+      {
+        path: 'role-manage',
+        name: 'RoleManage',
+        component: () => import('@/views/System/RoleManage/index.vue'),
+        meta: { title: '角色管理', icon: 'Role' },
+      },
+      {
+        path: 'menu-manage',
+        name: 'MenuManage',
+        component: () => import('@/views/System/MenuManage/index.vue'),
+        meta: { title: '菜单管理', icon: 'Menu' },
+      },
+    ],
   },
 
   {

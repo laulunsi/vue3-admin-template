@@ -1,15 +1,15 @@
-export default defineStore('user', {
-  state() {
-    return {}
-  },
+import { getToken, removeToken } from '@/utils/cache/local-storage'
 
-  actions: {
-    /** 用户登录 */
-    login() {},
+export default defineStore('user', () => {
+  const token = ref<string>(getToken())
+  const roles = ref<string[]>([])
+  const permissions = ref<string[]>([])
+  const avatar = ref(`https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif?imageView2/1/w/80/h/80`)
 
-    /** 退出登录 */
-    logout() {},
-  },
+  function logout() {
+    token.value = ''
+    removeToken()
+  }
 
-  getters: {},
+  return { token, roles, permissions, avatar, logout }
 })
