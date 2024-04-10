@@ -25,7 +25,6 @@
 defineOptions({ name: 'Navbar' })
 import Hamburger from '../Hamburger/index.vue'
 import Breadcrumb from '../Breadcrumb/index.vue'
-import { ElLoading, ElMessageBox } from 'element-plus'
 
 const route = useRoute()
 const router = useRouter()
@@ -36,7 +35,7 @@ const settingStore = useSetting()
 /** 退出登录 */
 async function logout() {
   try {
-    await ElMessageBox.confirm('确定要退出系统吗？', '温馨提示', { type: 'warning' })
+    await useModal().confirm('确定要退出系统吗？')
     await userStore.logout()
     window.location.reload()
   } catch (error) {

@@ -93,7 +93,6 @@ async function handleLogin() {
     if (loginForm.value.rememberMe) setLoginParams(cacheParams as LoginParams)
     loading.value = false
     await router.replace({ path: redirect })
-    ElNotification({ title: '登录成功', type: 'success', message: `${timeFix()}，${welcome()}` })
   } catch (error) {
     console.log('error: ', error) // for debug
     loading.value = false
