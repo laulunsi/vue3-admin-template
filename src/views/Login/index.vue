@@ -97,7 +97,7 @@ async function handleLogin() {
   try {
     await loginFormRef.value?.validate()
     loading.value = true
-    // await userStore.login(loginForm.value)
+    await userStore.login()
     if (loginForm.value.rememberMe) handleRememberMe()
     loading.value = false
     await router.replace({ path: redirect })
