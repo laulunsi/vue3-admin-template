@@ -62,6 +62,21 @@ export const constantRoutes: RouteRecordRaw[] = [
   },
 
   {
+    path: '/monitor',
+    name: 'Monitor',
+    component: Layout,
+    meta: { title: '系统监控', icon: 'Monitor', alwaysShow: true },
+    children: [
+      {
+        path: 'server',
+        name: 'Server',
+        component: () => import('@/views/Monitor/Server/index.vue'),
+        meta: { title: '服务监控', icon: 'Monitor' },
+      },
+    ],
+  },
+
+  {
     path: '/404',
     component: () => import('@/views/ExceptionPage/NotFound.vue'),
     meta: { title: 'NotFound', hidden: true },

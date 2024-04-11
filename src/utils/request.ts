@@ -38,11 +38,17 @@ request.interceptors.response.use(
     return response.data
   },
   (error: any) => {
-    const status: number = error.response.status // status 是 HTTP 状态码
-    const message = handleErrorCode(status)
-    console.log('响应拦截器异常信息: ', message)
     console.log('响应拦截器异常: ', error) // for debug
     NProgress.done() // 关闭响应进度条
+    let message = error.message
+    if (message == 'Network Error') {
+      message = '服务器接口连接异常'
+    } else if (message.includes('timeout')) {
+      message = '系统接口请求超时'
+    } else if (message.includes('Request failed with status code')) {
+      message = '系统接口 ' + message.substr(message.length - 3) + ' 异常'
+    }
+    useModal().msgError(message)
     return Promise.reject(error)
   },
 )
