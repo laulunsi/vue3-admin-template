@@ -1,0 +1,183 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 3806809 */
+  src: url('iconfont.woff2?t=1712800395986') format('woff2'),
+       url('iconfont.woff?t=1712800395986') format('woff'),
+       url('iconfont.ttf?t=1712800395986') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Calendar:before {
+  content: "\e63f";
+}
+
+.icon-Monitor:before {
+  content: "\e63c";
+}
+
+.icon-Male:before {
+  content: "\e657";
+}
+
+.icon-Female:before {
+  content: "\e658";
+}
+
+.icon-Upload:before {
+  content: "\e604";
+}
+
+.icon-Web:before {
+  content: "\e628";
+}
+
+.icon-Download:before {
+  content: "\e617";
+}
+
+.icon-Gitee:before {
+  content: "\e603";
+}
+
+.icon-Github:before {
+  content: "\e709";
+}
+
+.icon-Dashboard:before {
+  content: "\e669";
+}
+
+.icon-Setting:before {
+  content: "\e864";
+}
+
+.icon-Scan:before {
+  content: "\e616";
+}
+
+.icon-iOS:before {
+  content: "\e60c";
+}
+
+.icon-Android:before {
+  content: "\e630";
+}
+
+.icon-Menu:before {
+  content: "\e608";
+}
+
+.icon-Role:before {
+  content: "\e6a8";
+}
+
+.icon-Alipay:before {
+  content: "\e8de";
+}
+
+.icon-Refresh:before {
+  content: "\e690";
+}
+
+.icon-Code:before {
+  content: "\e6ad";
+}
+
+.icon-Sport:before {
+  content: "\e61c";
+}
+
+.icon-Link:before {
+  content: "\e646";
+}
+
+.icon-Guard:before {
+  content: "\e636";
+}
+
+.icon-Lock:before {
+  content: "\e653";
+}
+
+.icon-User:before {
+  content: "\e622";
+}
+
+.icon-Star:before {
+  content: "\e601";
+}
+
+.icon-GasStation:before {
+  content: "\e9fa";
+}
+
+.icon-QQ:before {
+  content: "\e600";
+}
+
+.icon-WeChat:before {
+  content: "\e66c";
+}
+
+.icon-DouYin:before {
+  content: "\e8db";
+}
+
+.icon-ToolBox:before {
+  content: "\e6cf";
+}
+
+.icon-Share:before {
+  content: "\ed2e";
+}
+
+.icon-Search:before {
+  content: "\e651";
+}
+
+.icon-Qrcode:before {
+  content: "\e7ad";
+}
+
+.icon-External:before {
+  content: "\e711";
+}
+
+.icon-ExitFullScreen:before {
+  content: "\e62a";
+}
+
+.icon-FullScreen:before {
+  content: "\e62b";
+}
+
+.icon-Close:before {
+  content: "\e643";
+}
+
+.icon-Plus:before {
+  content: "\e68b";
+}
+
+.icon-Loading:before {
+  content: "\e7c7";
+}
+
+.icon-Fold:before {
+  content: "\e665";
+}
+
+.icon-Expand:before {
+  content: "\e602";
+}
+
+.icon-Copy:before {
+  content: "\ec7a";
+}
+

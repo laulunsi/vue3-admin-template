@@ -4,8 +4,8 @@
 @use './common.scss'; // 通用样式类
 @use './transition.scss'; // 动画类
 @use './side-layout.scss'; // 侧栏布局样式类
-@import '//at.alicdn.com/t/c/font_3806809_43zggh88y9h.css'; // iconfont 字体图标
-
+@import './fonts/iconfont.css'; // iconfont 字体图标
+//a
 body {
   // background-color: var(--color-danger);
   background-color: #f4f7f9;
@@ -19,11 +19,15 @@ body {
   padding: 16px;
 }
 
-// 侧边栏的 item 的 popper
+/* 配置侧边栏折叠时菜单项的样式 */
 .el-popper {
   border: none !important;
   .el-menu-item {
     height: var(--app-menu-item-height);
     line-height: var(--app-menu-item-height);
+    &.is-active {
+      color: var(--app-menu-active-color);
+      background-color: var(--app-menu-active-bgc) !important;
+    }
   }
 }

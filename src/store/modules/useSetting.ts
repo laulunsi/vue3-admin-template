@@ -1,3 +1,5 @@
+type TransitionName = 'fade-transform' | 'el-fade-in' | 'el-fade-in-linear' | 'el-zoom-in-top' | 'el-zoom-in-center' | 'el-zoom-in-bottom'
+
 export default defineStore('setting', () => {
   /** 是否显示 Settings Panel */
   const showSetting = ref<boolean>(false)
@@ -12,7 +14,7 @@ export default defineStore('setting', () => {
   /** 是否显示全屏按钮 */
   const showScreenfull = ref<boolean>(true)
 
-  const transitionName = ref('fade-transform')
+  const transitionName = ref<TransitionName>('el-zoom-in-bottom')
 
   return { showSetting, showLogo, fixedHeader, showBreadcrumb, showTagsView, showScreenfull, transitionName }
 })

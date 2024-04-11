@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-manage">MenuManage</div>
+  <div class="app-content">MenuManage</div>
 </template>
 
 <script setup lang="ts">

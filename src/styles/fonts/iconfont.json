@@ -1,0 +1,303 @@
+{
+  "id": "3806809",
+  "name": "web-blog",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1305477",
+      "name": "日历",
+      "font_class": "Calendar",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "24848551",
+      "name": "系统监控",
+      "font_class": "Monitor",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "6548540",
+      "name": "男",
+      "font_class": "Male",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "6548543",
+      "name": "女",
+      "font_class": "Female",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
+      "icon_id": "4880416",
+      "name": "上传",
+      "font_class": "Upload",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "1969587",
+      "name": "网站",
+      "font_class": "Web",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "12875296",
+      "name": "下载",
+      "font_class": "Download",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "31233602",
+      "name": "gitee2",
+      "font_class": "Gitee",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "431779",
+      "name": "github",
+      "font_class": "Github",
+      "unicode": "e709",
+      "unicode_decimal": 59145
+    },
+    {
+      "icon_id": "3851385",
+      "name": "仪表盘",
+      "font_class": "Dashboard",
+      "unicode": "e669",
+      "unicode_decimal": 58985
+    },
+    {
+      "icon_id": "9799482",
+      "name": "设置",
+      "font_class": "Setting",
+      "unicode": "e864",
+      "unicode_decimal": 59492
+    },
+    {
+      "icon_id": "953440",
+      "name": "扫描",
+      "font_class": "Scan",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "1420800",
+      "name": "IOS",
+      "font_class": "iOS",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "12586801",
+      "name": "安卓",
+      "font_class": "Android",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "1311618",
+      "name": "菜单",
+      "font_class": "Menu",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "8729890",
+      "name": "角色管理",
+      "font_class": "Role",
+      "unicode": "e6a8",
+      "unicode_decimal": 59048
+    },
+    {
+      "icon_id": "18166716",
+      "name": "支付,支付宝",
+      "font_class": "Alipay",
+      "unicode": "e8de",
+      "unicode_decimal": 59614
+    },
+    {
+      "icon_id": "169389",
+      "name": "刷新2",
+      "font_class": "Refresh",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "34899855",
+      "name": "代码",
+      "font_class": "Code",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "5175711",
+      "name": "跑步",
+      "font_class": "Sport",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "629317",
+      "name": "链接",
+      "font_class": "Link",
+      "unicode": "e646",
+      "unicode_decimal": 58950
+    },
+    {
+      "icon_id": "1435248",
+      "name": "验证码",
+      "font_class": "Guard",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "9122150",
+      "name": "密码",
+      "font_class": "Lock",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
+      "icon_id": "15391387",
+      "name": "用户",
+      "font_class": "User",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "1253",
+      "name": "收藏",
+      "font_class": "Star",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "18170967",
+      "name": "地图加油站",
+      "font_class": "GasStation",
+      "unicode": "e9fa",
+      "unicode_decimal": 59898
+    },
+    {
+      "icon_id": "26701",
+      "name": "qq",
+      "font_class": "QQ",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1004714",
+      "name": "微信",
+      "font_class": "WeChat",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "18166694",
+      "name": "抖音",
+      "font_class": "DouYin",
+      "unicode": "e8db",
+      "unicode_decimal": 59611
+    },
+    {
+      "icon_id": "15718632",
+      "name": "工具",
+      "font_class": "ToolBox",
+      "unicode": "e6cf",
+      "unicode_decimal": 59087
+    },
+    {
+      "icon_id": "8481279",
+      "name": "分享方式",
+      "font_class": "Share",
+      "unicode": "ed2e",
+      "unicode_decimal": 60718
+    },
+    {
+      "icon_id": "629357",
+      "name": "搜索",
+      "font_class": "Search",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "750883",
+      "name": "二维码",
+      "font_class": "Qrcode",
+      "unicode": "e7ad",
+      "unicode_decimal": 59309
+    },
+    {
+      "icon_id": "2967034",
+      "name": "操作-外链",
+      "font_class": "External",
+      "unicode": "e711",
+      "unicode_decimal": 59153
+    },
+    {
+      "icon_id": "5698509",
+      "name": "全屏缩小",
+      "font_class": "ExitFullScreen",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "5698510",
+      "name": "全屏显示",
+      "font_class": "FullScreen",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "18863162",
+      "name": "关闭",
+      "font_class": "Close",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "29657590",
+      "name": "新增",
+      "font_class": "Plus",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "15816274",
+      "name": "032加载-2",
+      "font_class": "Loading",
+      "unicode": "e7c7",
+      "unicode_decimal": 59335
+    },
+    {
+      "icon_id": "7450639",
+      "name": "收缩",
+      "font_class": "Fold",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "8224810",
+      "name": "展开",
+      "font_class": "Expand",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "5993150",
+      "name": "复制",
+      "font_class": "Copy",
+      "unicode": "ec7a",
+      "unicode_decimal": 60538
+    }
+  ]
+}
