@@ -4,6 +4,8 @@ import { getLayoutConfig } from '@/utils/cache/local-storage'
 export interface LayoutConfig {
   /** 是否显示 Settings Panel */
   showSetting: boolean
+  /** 是否动态标题 */
+  dynamicTitle: boolean
   /** 是否显示灰色模式 */
   showGreyMode: boolean
   /** 是否显示色弱模式 */
@@ -27,6 +29,7 @@ const defaultSetting: LayoutConfig = {
   showSetting: false,
   showGreyMode: false,
   showColorWeakness: false,
+  dynamicTitle: true,
   showBreadcrumb: true,
   showLogo: true,
   showScreenfull: true,

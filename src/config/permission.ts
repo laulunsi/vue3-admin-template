@@ -7,6 +7,8 @@ const NProgress = useNProgress() // 顶部进度条
 
 router.beforeEach((to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) => {
   NProgress.start()
+  const settingStore = useSetting()
+  settingStore.handleDynamicTitle(to.meta.title)
   if (getToken()) {
     if (to.path.toLowerCase() === '/login') {
       next({ path: '/', replace: true }) // 如果已经登录，并准备进入 Login 页面，则重定向到主页

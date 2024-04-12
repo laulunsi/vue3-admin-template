@@ -16,6 +16,15 @@ pnpm install
 pnpm dev
 ```
 
+## 目录参考
+
+```bash
+|-src
+| |-config
+|   |-defaultSetting.ts               # 项目默认配置
+|   |-white-list.ts                   # 路由免授权白名单
+```
+
 ## 使用须知
 
 - [Vite 已不再支持 EOL 的 NodeJS 14 / 16 / 17 / 19。现在需要 NodeJS 18 / 20+](https://cn.vitejs.dev/guide/migration.html#migration-from-v4)
