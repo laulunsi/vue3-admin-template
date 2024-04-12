@@ -77,6 +77,21 @@ export const constantRoutes: RouteRecordRaw[] = [
   },
 
   {
+    path: '/example',
+    name: 'Example',
+    component: Layout,
+    meta: { title: '功能案例', icon: 'Monitor', alwaysShow: true },
+    children: [
+      {
+        path: 'rich-editor',
+        name: 'RichEditor',
+        component: () => import('@/views/Example/RichEditor/index.vue'),
+        meta: { title: '富文本编辑器', icon: 'Monitor' },
+      },
+    ],
+  },
+
+  {
     path: '/404',
     component: () => import('@/views/ExceptionPage/NotFound.vue'),
     meta: { title: 'NotFound', hidden: true },
