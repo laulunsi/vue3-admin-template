@@ -25,6 +25,14 @@
         <span class="switch-item__label">多标签模式</span>
         <el-switch v-model="settingStore.showTagsView" />
       </div>
+      <div class="switch-item">
+        <span class="switch-item__label">灰色模式</span>
+        <el-switch v-model="settingStore.showGreyMode" @change="settingStore.showColorWeakness = false" />
+      </div>
+      <div class="switch-item">
+        <span class="switch-item__label">色弱模式</span>
+        <el-switch v-model="settingStore.showColorWeakness" @change="settingStore.showGreyMode = false" />
+      </div>
 
       <el-divider />
 

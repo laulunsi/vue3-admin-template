@@ -5,10 +5,19 @@
 @use './transition.scss'; // 动画类
 @use './side-layout.scss'; // 侧栏布局样式类
 @import './fonts/iconfont.css'; // iconfont 字体图标
-//a
+
 body {
   // background-color: var(--color-danger);
   background-color: #f4f7f9;
+}
+
+/* 灰色模式 */
+.showGreyMode {
+  filter: grayscale(1);
+}
+/* 色弱模式 */
+.showColorWeakness {
+  filter: invert(0.8);
 }
 
 /* 业务页面几乎都应该在根元素上挂载 class="app-content"，以保持页面美观 */

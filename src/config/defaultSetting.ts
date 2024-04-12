@@ -1,8 +1,13 @@
 import { getLayoutConfig } from '@/utils/cache/local-storage'
 
+/** 项目配置类型 */
 export interface LayoutConfig {
   /** 是否显示 Settings Panel */
   showSetting: boolean
+  /** 是否显示灰色模式 */
+  showGreyMode: boolean
+  /** 是否显示色弱模式 */
+  showColorWeakness: boolean
   /** 是否显示 Logo */
   showLogo: boolean
   /** 是否固定 Header */
@@ -17,10 +22,11 @@ export interface LayoutConfig {
   transitionName: 'fade-transform' | 'el-fade-in' | 'el-fade-in-linear' | 'el-zoom-in-top' | 'el-zoom-in-center' | 'el-zoom-in-bottom'
 }
 
-type CacheLayoutConfig = Omit<LayoutConfig, 'showSetting'>
-
+/** 默认配置 */
 const defaultSetting: LayoutConfig = {
   showSetting: false,
+  showGreyMode: false,
+  showColorWeakness: false,
   showBreadcrumb: true,
   showLogo: true,
   showScreenfull: true,
@@ -29,4 +35,5 @@ const defaultSetting: LayoutConfig = {
   transitionName: 'fade-transform',
 }
 
+/** 合并后的配置 */
 export default Object.assign(defaultSetting, getLayoutConfig())
