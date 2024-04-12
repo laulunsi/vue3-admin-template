@@ -26,9 +26,5 @@ export default defineStore('setting', () => {
     setTimeout(() => window.location.reload(), 1000)
   }
 
-  const isSide = computed(() => state.layoutMode === LayoutModeEnum.SIDE)
-  const isMix = computed(() => state.layoutMode === LayoutModeEnum.MIX)
-  const isTop = computed(() => state.layoutMode === LayoutModeEnum.TOP)
-
-  return { ...toRefs(state), isSide, isTop, isMix, saveSetting, resetSetting, handleDynamicTitle }
+  return { ...toRefs(state), saveSetting, resetSetting, handleDynamicTitle }
 })

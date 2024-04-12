@@ -29,7 +29,7 @@ export interface LayoutConfig {
 
 /** 默认配置 */
 const defaultSetting: LayoutConfig = {
-  layoutMode: LayoutModeEnum.TOP,
+  layoutMode: LayoutModeEnum.SIDE,
   showSetting: false,
   showGreyMode: false,
   showColorWeakness: false,

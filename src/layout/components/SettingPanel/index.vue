@@ -57,7 +57,7 @@ import SelectLayoutMode from './SelectLayoutMode.vue'
 
 const route = useRoute()
 const settingStore = useSetting()
-const { isMix, isSide, isTop } = storeToRefs(settingStore)
+const { isMix, isSide, isTop } = useLayoutModel()
 </script>
 
 <style lang="scss" scoped>

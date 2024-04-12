@@ -33,13 +33,7 @@
 defineOptions({ name: 'SelectLayoutMode' })
 import { LayoutModeEnum } from '@/enums'
 
-const settingStore = useSetting()
-const { isMix, isSide, isTop } = storeToRefs(settingStore)
-
-function setLayoutMode(layoutMode: LayoutModeEnum) {
-  if (layoutMode === LayoutModeEnum.MIX) return useModal().msgWarning(`${layoutMode} 布局正在努力开发中...`)
-  settingStore.layoutMode = layoutMode
-}
+const { isMix, isTop, isSide, setLayoutMode } = useLayoutModel()
 </script>
 
 <style lang="scss" scoped>

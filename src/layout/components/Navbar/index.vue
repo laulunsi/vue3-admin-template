@@ -3,7 +3,7 @@
     <!-- 侧栏折叠控制 -->
     <Hamburger class="menu-item hamburger" @toggleClick="appStore.toggleSidebar" v-if="isMix || isSide" />
     <!-- 面包屑导航 -->
-    <Breadcrumb class="breadcrumb-container" v-if="appStore.isDesktop && showBreadcrumb && !isTop" />
+    <Breadcrumb class="breadcrumb-container" v-if="appStore.isDesktop && settingStore.showBreadcrumb && !isTop" />
 
     <template v-if="isTop || isMix">
       <AppLogo :collapse="false" v-if="settingStore.showLogo" class="app-logo" />
@@ -40,7 +40,7 @@ const router = useRouter()
 const appStore = useApp()
 const userStore = useUser()
 const settingStore = useSetting()
-const { isMix, isSide, isTop, showBreadcrumb } = storeToRefs(settingStore)
+const { isMix, isSide, isTop } = useLayoutModel()
 
 /** 退出登录 */
 async function logout() {

@@ -1,8 +1,8 @@
 <template>
   <!-- 左侧模式 -->
-  <SideLayout v-if="settingStore.isSide || appStore.isMobile" />
+  <SideLayout v-if="isSide || appStore.isMobile" />
   <!-- 顶部模式 -->
-  <TopLayout v-else-if="settingStore.isTop" />
+  <TopLayout v-else-if="isTop" />
 
   <!-- 右侧设置面板 -->
   <SettingPanel v-if="settingStore.showSetting"></SettingPanel>
@@ -20,6 +20,7 @@ useResize()
 
 const appStore = useApp()
 const settingStore = useSetting()
+const { isMix, isTop, isSide } = useLayoutModel()
 
 watchEffect(() => {
   // 解决色彩样式冲突
