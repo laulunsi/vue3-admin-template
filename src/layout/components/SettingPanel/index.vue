@@ -1,9 +1,12 @@
 <template>
   <el-drawer v-model="settingStore.showSetting" size="300px" :with-header="false">
     <div class="setting-container">
-      <h2 class="title text-center">功能配置</h2>
+      <h2 class="title text-center">布局配置</h2>
+      <SelectLayoutMode />
 
       <el-divider />
+
+      <h2 class="title text-center">功能配置</h2>
 
       <div class="switch-item">
         <span class="switch-item__label">显示 Logo</span>
@@ -46,6 +49,7 @@
 
 <script setup lang="ts">
 defineOptions({ name: 'SettingPanel' })
+import SelectLayoutMode from './SelectLayoutMode.vue'
 import { setLayoutConfig, removeLayoutConfig } from '@/utils/cache/local-storage'
 
 const settingStore = useSetting()
