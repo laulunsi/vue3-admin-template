@@ -12,7 +12,7 @@
         <el-image :src="userStore.avatar" fit="fill" class="avatar" />
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item @click="router.push({ path: `/user/profile` })">个人中心</el-dropdown-item>
+            <el-dropdown-item @click="settingStore.showSetting = true">布局配置</el-dropdown-item>
             <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
           </el-dropdown-menu>
         </template>

@@ -19,6 +19,9 @@
 
       <AppMain />
     </section>
+
+    <!-- 右侧设置面板 -->
+    <SettingPanel v-if="settingStore.showSetting"></SettingPanel>
   </div>
 </template>
 
@@ -29,6 +32,7 @@ import AppMenu from './components/AppMenu/index.vue'
 import AppMain from './components/AppMain/index.vue'
 import Navbar from './components/Navbar/index.vue'
 import TagsView from './components/TagsView/index.vue'
+import SettingPanel from './components/SettingPanel/index.vue'
 
 /** Layout 布局响应式 */
 useResize()

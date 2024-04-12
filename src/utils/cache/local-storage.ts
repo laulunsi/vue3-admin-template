@@ -1,5 +1,6 @@
 /** 统一处理 localStorage */
 import { CacheKey } from '@/common/constants/cache-key'
+import type { LayoutConfig } from '@/config/defaultSetting'
 import type { TagView } from '@/store/modules/useTagsView'
 
 /* -------------------------------------------------------------------------- */
@@ -61,4 +62,18 @@ export function setCachedViews(views: string[]) {
 export function getCachedViews(): string[] {
   const json = localStorage.getItem(CacheKey.CACHED_VIEWS)
   return json ? JSON.parse(json) : []
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Layout Config                               */
+/* -------------------------------------------------------------------------- */
+export function setLayoutConfig(config: Omit<LayoutConfig, 'showSetting'>) {
+  localStorage.setItem(CacheKey.LAYOUT_CONFIG, JSON.stringify(config))
+}
+export function getLayoutConfig(): Omit<LayoutConfig, 'showSetting'> {
+  const json = localStorage.getItem(CacheKey.LAYOUT_CONFIG)
+  return json ? JSON.parse(json) : {}
+}
+export function removeLayoutConfig() {
+  localStorage.removeItem(CacheKey.LAYOUT_CONFIG)
 }
