@@ -32,6 +32,7 @@ const classes = computed(() => ({
   &__header {
     display: flex;
     flex-direction: column;
+    background-color: var(--app-menu-bg-color);
   }
 }
 
@@ -41,7 +42,6 @@ const classes = computed(() => ({
   top: 0;
   z-index: 10;
   width: 100%;
-  background-color: var(--app-menu-bg-color);
   transition: width 0.28s;
 }
 .navbar {
