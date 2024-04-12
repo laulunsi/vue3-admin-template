@@ -14,3 +14,11 @@
   --app-menu-active-color: var(--app-menu-bg-color);
   --app-menu-active-bgc: var(--el-color-white);
 }
+
+html.layout-mode-top {
+  --app-menu-text-color: var(--el-text-color-primary);
+  --app-menu-item-height: var(--navbar-height);
+  --app-menu-bg-color: var(--el-color-white);
+  --app-menu-active-color: var(--el-text-color-primary);
+  --app-menu-active-bgc: var(--el-color-white);
+}

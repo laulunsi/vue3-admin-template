@@ -92,8 +92,8 @@ const hiddenScrollbarVerticalBar = computed(() => {
 /* 折叠时的激活 sub 主标题样式 */
 :deep(.el-sub-menu.is-active) {
   .el-sub-menu__title.el-tooltip__trigger {
-    color: var(--app-menu-bg-color);
-    background-color: var(--app-menu-text-color) !important;
+    color: var(--app-menu-text-color);
+    background-color: var(--app-menu-bg-color) !important;
   }
 }
 

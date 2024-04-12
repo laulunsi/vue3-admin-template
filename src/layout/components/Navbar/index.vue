@@ -1,9 +1,16 @@
 <template>
   <div class="navbar relative w-full flex items-center">
     <!-- 侧栏折叠控制 -->
-    <Hamburger class="menu-item hamburger" @toggleClick="appStore.toggleSidebar" />
+    <Hamburger class="menu-item hamburger" @toggleClick="appStore.toggleSidebar" v-if="isMix || isSide" />
     <!-- 面包屑导航 -->
-    <Breadcrumb class="breadcrumb-container" v-if="appStore.isDesktop && settingStore.showBreadcrumb" />
+    <Breadcrumb class="breadcrumb-container" v-if="appStore.isDesktop && showBreadcrumb && !isTop" />
+
+    <template v-if="isTop || isMix">
+      <AppLogo :collapse="false" v-if="settingStore.showLogo" class="app-logo" />
+      <!-- 导航菜单 -->
+      <AppMenu mode="horizontal" class="app-menu-conatiner" />
+    </template>
+
     <div class="right-menu flex items-center h-full">
       <!-- 全屏控件 -->
       <Screenfull class="menu-item" v-if="settingStore.showScreenfull" />
@@ -25,12 +32,15 @@
 defineOptions({ name: 'Navbar' })
 import Hamburger from '../Hamburger/index.vue'
 import Breadcrumb from '../Breadcrumb/index.vue'
+import AppLogo from '../AppLogo/index.vue'
+import AppMenu from '../AppMenu/index.vue'
 
 const route = useRoute()
 const router = useRouter()
 const appStore = useApp()
 const userStore = useUser()
 const settingStore = useSetting()
+const { isMix, isSide, isTop, showBreadcrumb } = storeToRefs(settingStore)
 
 /** 退出登录 */
 async function logout() {
@@ -74,6 +84,15 @@ async function logout() {
 
   &.icon-Refresh {
     font-size: 20px;
+  }
+}
+
+.layout-mode-top {
+  .app-logo {
+    margin-right: 10px;
+  }
+  .app-menu-conatiner {
+    flex: 1;
   }
 }
 </style>

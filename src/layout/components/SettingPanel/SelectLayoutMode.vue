@@ -33,12 +33,12 @@
 defineOptions({ name: 'SelectLayoutMode' })
 import { LayoutModeEnum } from '@/enums'
 
-const isSide = ref(true)
-const isTop = ref(false)
-const isMix = ref(false)
+const settingStore = useSetting()
+const { isMix, isSide, isTop } = storeToRefs(settingStore)
 
 function setLayoutMode(layoutMode: LayoutModeEnum) {
-  useModal().msgWarning(`${layoutMode} 布局正在努力开发中...`)
+  if (layoutMode === LayoutModeEnum.MIX) return useModal().msgWarning(`${layoutMode} 布局正在努力开发中...`)
+  settingStore.layoutMode = layoutMode
 }
 </script>
 

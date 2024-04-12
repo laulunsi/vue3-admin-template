@@ -19,18 +19,12 @@
 
       <AppMain />
     </section>
-
-    <!-- 右侧设置面板 -->
-    <SettingPanel v-if="settingStore.showSetting"></SettingPanel>
   </div>
 </template>
 
 <script setup lang="ts">
 defineOptions({ name: 'SideLayout' })
 import { AppLogo, AppMenu, Navbar, TagsView, AppMain, SettingPanel } from '@/layout/components'
-
-/** Layout 布局响应式 */
-useResize()
 
 /** 读取 Pinia 仓库 */
 const appStore = useApp()

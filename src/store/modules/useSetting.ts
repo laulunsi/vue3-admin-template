@@ -1,4 +1,5 @@
 import defaultSetting, { LayoutConfig } from '@/config/defaultSetting'
+import { LayoutModeEnum } from '@/enums'
 import { setLayoutConfig, removeLayoutConfig } from '@/utils/cache/local-storage'
 
 export default defineStore('setting', () => {
@@ -25,5 +26,9 @@ export default defineStore('setting', () => {
     setTimeout(() => window.location.reload(), 1000)
   }
 
-  return { ...toRefs(state), saveSetting, resetSetting, handleDynamicTitle }
+  const isSide = computed(() => state.layoutMode === LayoutModeEnum.SIDE)
+  const isMix = computed(() => state.layoutMode === LayoutModeEnum.MIX)
+  const isTop = computed(() => state.layoutMode === LayoutModeEnum.TOP)
+
+  return { ...toRefs(state), isSide, isTop, isMix, saveSetting, resetSetting, handleDynamicTitle }
 })

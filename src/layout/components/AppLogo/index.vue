@@ -36,7 +36,7 @@ const title = computed(() => import.meta.env.VITE_APP_TITLE)
     justify-content: center;
     width: 100%;
     height: 100%;
-    color: var(--el-color-white);
+    color: inherit;
 
     .app-logo {
       width: 32px;

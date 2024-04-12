@@ -1,9 +1,12 @@
+import { LayoutModeEnum } from '@/enums'
 import { getLayoutConfig } from '@/utils/cache/local-storage'
 
 /** 项目配置类型 */
 export interface LayoutConfig {
   /** 是否显示 Settings Panel */
   showSetting: boolean
+  /** 布局模式 */
+  layoutMode: 'side' | 'top' | 'mix'
   /** 是否动态标题 */
   dynamicTitle: boolean
   /** 是否显示灰色模式 */
@@ -26,6 +29,7 @@ export interface LayoutConfig {
 
 /** 默认配置 */
 const defaultSetting: LayoutConfig = {
+  layoutMode: LayoutModeEnum.TOP,
   showSetting: false,
   showGreyMode: false,
   showColorWeakness: false,

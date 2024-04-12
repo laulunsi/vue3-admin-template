@@ -22,7 +22,7 @@
       </div>
       <div class="switch-item">
         <span class="switch-item__label">面包屑导航</span>
-        <el-switch v-model="settingStore.showBreadcrumb" />
+        <el-switch v-model="settingStore.showBreadcrumb" :disabled="isTop" />
       </div>
       <div class="switch-item">
         <span class="switch-item__label">全屏控件</span>
@@ -57,6 +57,7 @@ import SelectLayoutMode from './SelectLayoutMode.vue'
 
 const route = useRoute()
 const settingStore = useSetting()
+const { isMix, isSide, isTop } = storeToRefs(settingStore)
 </script>
 
 <style lang="scss" scoped>
