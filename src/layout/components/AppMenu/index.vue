@@ -1,6 +1,6 @@
 <template>
   <el-scrollbar wrap-class="scrollbar-wrapper">
-    <el-menu unique-opened :collapse="isCollapse" :collapse-transition="false" :defaultActive :textColor :backgroundColor :mode>
+    <el-menu unique-opened :collapse="isCollapse && !isTop" :collapse-transition="false" :defaultActive :textColor :backgroundColor :mode>
       <AppMenuItem v-for="(route, index) in routeList" :key="index" :item="route" :basePath="route.path" />
     </el-menu>
   </el-scrollbar>
@@ -20,6 +20,7 @@ const props = defineProps({
 const appStore = useApp()
 const settingStore = useSetting()
 const permissionStore = usePermission()
+const { isMix, isTop, isSide } = useLayoutModel()
 /** 构建路由和路由器 */
 const route = useRoute()
 const router = useRouter()
@@ -33,11 +34,6 @@ const isCollapse = computed(() => !appStore.sidebar.opened)
 /** 计算当前路由表 */
 // const routeList = computed(() => permissionStore.routes)
 const routeList = computed(() => router.options.routes)
-
-// 当为顶部模式时隐藏垂直滚动条
-const hiddenScrollbarVerticalBar = computed(() => {
-  return true ? 'none' : 'block'
-})
 </script>
 
 <style lang="scss" scoped>
@@ -55,7 +51,7 @@ const hiddenScrollbarVerticalBar = computed(() => {
       display: none; // 隐藏水平滚动条
     }
     &.is-vertical {
-      display: v-bind(hiddenScrollbarVerticalBar); // 当为顶部模式时隐藏垂直滚动条
+      display: none; // 当为顶部模式时隐藏垂直滚动条
     }
   }
 }
@@ -92,8 +88,8 @@ const hiddenScrollbarVerticalBar = computed(() => {
 /* 折叠时的激活 sub 主标题样式 */
 :deep(.el-sub-menu.is-active) {
   .el-sub-menu__title.el-tooltip__trigger {
-    color: var(--app-menu-text-color);
-    background-color: var(--app-menu-bg-color) !important;
+    color: var(--app-menu-active-color) !important;
+    background-color: var(--app-menu-active-bgc) !important;
   }
 }
 
@@ -103,9 +99,13 @@ const hiddenScrollbarVerticalBar = computed(() => {
 :deep(.el-menu--horizontal .el-menu-item) {
   height: var(--app-menu-item-height);
   line-height: var(--app-menu-item-height);
+  &:hover,
   &.is-active {
-    color: var(--app-menu-active-color);
+    color: var(--app-menu-active-color) !important;
     background-color: var(--app-menu-active-bgc) !important;
+  }
+  &:focus {
+    background-color: var(--app-menu-bg-color) !important;
   }
 }
 </style>

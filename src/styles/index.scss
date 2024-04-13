@@ -31,12 +31,15 @@ body {
 /* 配置侧边栏折叠时菜单项的样式 */
 .el-popper {
   border: none !important;
-  .el-menu-item {
-    height: var(--app-menu-item-height);
-    line-height: var(--app-menu-item-height);
-    &.is-active {
-      color: var(--app-menu-active-color);
-      background-color: var(--app-menu-active-bgc) !important;
+  .el-menu {
+    .el-menu-item {
+      height: var(--app-menu-item-height);
+      line-height: var(--app-menu-item-height);
+      &:hover,
+      &.is-active {
+        color: var(--app-menu-active-color) !important;
+        background-color: var(--app-menu-active-bgc) !important;
+      }
     }
   }
 }
